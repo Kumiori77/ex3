@@ -3,23 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>ex2</title>
+
+    <style>
+        .target{background-color: darkseagreen}
+    </style>
+
 </head>
 <body>
 
 <!--<li th:each="dto, state : ${list}">-->
 
+
+<!--<ul>-->
+<!--    <li th:each="dto, state : ${list}">-->
+<!--        <span th:if="${state.count % 5 == 0}" th:text="${'======>' + dto.sno}" >-->
+<!--        </span>-->
+
+<!--        <span th:unless="${state.count % 5 == 0}" th:text="${dto.first}"></span>-->
+<!--    </li>-->
+<!--</ul>-->
+
+
+<!--<ul>-->
+<!--    <li th:each="dto, state : ${list}" th:text="${dto}"-->
+<!--        th:class ="${state.count % 5 == 0} ? target" >-->
+<!--    </li>-->
+<!--</ul>-->
+
 <ul>
 
-    <li th:each="dto, state : ${list}">
-        <span th:if="${dto.sno % 5 == 0}" th:text="${'======>' + dto.sno}" >
-        </span>
-
-        <span th:unless="${dto.sno % 5 == 0}" th:text="${dto.first}"></span>
-
-
-    </li>
+    <th:block th:each="dto: ${list}">
+        <li th:text="${dto.sno % 5 == 0} ? ${dto.sno} : ${dto.first}"></li>
+    </th:block>
 
 </ul>
 
+
+
 </body>
 </html>
+
+
