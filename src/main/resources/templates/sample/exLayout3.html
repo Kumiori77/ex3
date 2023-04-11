@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <th:block th:replace="~{/fragments/fragment3 ::
+    target(~{this :: #ul_first}, ~{this :: #ul_second})}">
+
+        <ul id="ul_first">
+
+            <li>apple</li>
+            <li>banana</li>
+            <li>watermellon</li>
+
+        </ul>
+
+        <ul id="ul_second">
+
+            <li>cola</li>
+            <li>sprite</li>
+            <li>juice</li>
+
+        </ul>
+
+    </th:block>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>exFormat</title>
+</head>
+<body>
+
+  <ul>
+
+    <li th:each="dto : ${list}">
+
+      [[${#numbers.formatInteger(dto.sno, 5)}]]
+      -------
+      [[${{#temporals.format(dto.regTime, 'YYYY/MM/dd hh:mm a')}}]]
+
+    </li>
+
+  </ul>
+
+</body>
+</html>
